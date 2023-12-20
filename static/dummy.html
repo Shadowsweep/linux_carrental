@@ -1,0 +1,176 @@
+
+<style>
+.rightbartemplate {
+  width: 100%;
+  max-width: 500px;
+  margin: 0 auto;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  text-align: center;
+}
+
+.rightbartemplate .vehicle-image {
+  width: 100%;
+  max-width: 200px;
+  margin: 0 auto;
+}
+
+.rightbartemplate .company-name {
+  font-family: Poppins;
+  font-size: 16px;
+  font-weight: 500;
+  margin-top: 10px;
+}
+
+.rightbartemplate .subcategory-name {
+  font-family: Poppins;
+  font-size: 20px;
+  font-weight: 600;
+  margin-top: 10px;
+}
+
+.rightbartemplate .vehicle-details {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 10px;
+}
+
+.rightbartemplate .vehicle-details img {
+  width: 20px;
+  margin-right: 5px;
+}
+
+.rightbartemplate .vehicle-details span {
+  font-family: Poppins;
+  font-size: 12px;
+  font-weight: 500;
+}
+
+.rightbartemplate .price-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.rightbartemplate .price {
+  font-size: 24px;
+  font-weight: 700;
+}
+
+.rightbartemplate .button {
+  background-color: #007bff;
+  color: #fff;
+  padding: 10px 20px;
+  font-size: 14px;
+  font-weight: bold;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.rightbartemplate .additional-info {
+  font-family: Poppins;
+  font-size: 12px;
+  font-weight: 500;
+  margin-top: 20px;
+}
+
+/* Tablet Styles */
+@media (max-width: 768px) {
+  .rightbartemplate .subcategory-name {
+    font-size: 16px;
+  }
+
+  .rightbartemplate .vehicle-details img {
+    width: 15px;
+  }
+
+  .rightbartemplate .vehicle-details span {
+    font-size: 10px;
+  }
+
+  .rightbartemplate .price {
+    font-size: 20px;
+  }
+
+  .rightbartemplate .button {
+    font-size: 12px;
+  }
+
+  .rightbartemplate .additional-info {
+    font-size: 10px;
+  }
+}
+
+/* Mobile Styles */
+@media (max-width: 480px) {
+  .rightbartemplate .vehicle-image {
+    max-width: 150px;
+  }
+
+  .rightbartemplate .company-name {
+    font-size: 14px;
+  }
+
+  .rightbartemplate .subcategory-name {
+    font-size: 16px;
+  }
+
+  .rightbartemplate .vehicle-details img {
+    width: 12px;
+  }
+
+  .rightbartemplate .vehicle-details span {
+    font-size: 8px;
+  }
+
+  .rightbartemplate .price {
+    font-size: 18px;
+  }
+
+  .rightbartemplate .button {
+    font-size: 10px;
+    padding: 8px 16px;
+  }
+
+  .rightbartemplate .additional-info {
+    font-size: 8px;
+  }
+}
+
+
+
+</style>
+
+
+
+<a href='http://localhost:8000/api/selectedvehicle/?vehicle=${JSON.stringify(item)}' style="text-decoration:none; cursor:pointer; color:#000;">
+    <div class="rightbartemplate" style="margin-left: 3%;">
+      <img src="/${item.icon}" width="60%" style="display: flex; margin-left: 20%; margin-top: 4%;">
+      <div style="margin-left: 8%; font-family: Poppins; font-size: 12px; font-weight: 500; margin-top: 1%;">
+        ${item.companyname}
+      </div>
+      <div style="margin-left: 8%; font-family: Poppins; font-size: 16px; font-weight: 600;">
+        ${item.subcategoryname}
+      </div>
+      <div style="margin-left: 5%; font-family: Poppins; font-size: 10px; font-weight: 600;">
+        <img src="/static/iconDiesel.svg" width="4%"><span style="padding-left: 2%; font-family: Poppins; font-size: 12px; font-weight: 500;">${item.fueltype}</span>
+        <img src="/static/iconTransmission.svg" width="11%" style="padding-left: 6%;"><span style="padding-left: 2%; font-family: Poppins; font-size: 12px; font-weight: 500;">${item.transmissiontype}</span>
+        <img src="/static/iconSeat.svg" width="10%" style="padding-left: 5%;"><span style="padding-left: 2%; font-family: Poppins; font-size: 12px; font-weight: 500;">${item.noofseats} Seats</span>
+      </div>
+      <div style="margin-left: 8%;">
+        <div style="font-size: 26px; margin-top: 4%; display: flex; justify-content: space-between;">
+          <div style="display: flex; margin-left: 1%; margin-top: 1%; ">&#8377<span style="font-family: Poppins; font-size: 26px; font-weight: 700;">${item.price}</span></div>
+          <div class="button_style" style="display: flex; margin-right: 7%; margin-top: 1%;">
+            <div style="display: flex; align-items: center; font-size: 15px; color: #fff; font-weight: bold;">Book  ></div>
+          </div>
+        </div>
+      </div>
+      <div style="margin-left: 8%; font-family: Poppins; font-size: 12px; font-weight: 500; margin-top: 5%;">
+        288 kms | Price <b>exclude</b> fuel cost
+      </div>
+    </div>
+  </a>
+  

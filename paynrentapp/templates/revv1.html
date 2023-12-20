@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Split Screen Example</title>
+	<style>
+		/* set the width to 50% to split the screen in half */
+		.left-half {
+			width: 50%;
+			height: 100%;
+			background-color: #808080; /* set the background color to gray */
+			float: left; /* float the element to the left */
+		}
+		
+		/* set the width to 50% to split the screen in half */
+		.right-half {
+			width: 50%;
+			height: 100%;
+			background-color: #FFFFFF; /* set the background color to white */
+			float: right; /* float the element to the right */
+		}
+		
+		/* clear the float so that other elements are not affected */
+		.clear {
+			clear: both;
+		}
+	</style>
+</head>
+<body>
+	<div class="left-half"></div>
+	<div class="right-half"></div>
+	<div class="clear"></div>
+</body>
+</html>

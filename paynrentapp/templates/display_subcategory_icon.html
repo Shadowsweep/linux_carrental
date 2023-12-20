@@ -1,0 +1,13 @@
+<html>
+<center>
+    <form action="/api/subcategory_save_icon" method="post" enctype="multipart/form-data">{% csrf_token %}
+        <input type="hidden" name="id" value="{{data.id.0}}" />
+        <h1> {{data.scn.0}} </h1>
+        <img src="{{data.icon.0}}" width="300" height="300" />
+        <b>Pls select new icon:</b><br><br>
+        <input type="file" name="icon" required>
+        <input type="submit">
+    </form>
+</center>
+
+</html>
